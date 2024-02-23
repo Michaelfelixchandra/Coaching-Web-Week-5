@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "songs",
+  "info": {
+    "singularName": "song",
+    "pluralName": "songs",
+    "displayName": "song",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nameMusic": {
+      "type": "string"
+    },
+    "Genre": {
+      "type": "enumeration",
+      "enum": [
+        "Alternatif/Indie",
+        "Alternatif/Indie, French Indie, Rock",
+        "Arena rock, rock",
+        "Country",
+        "Dance/Elektronik",
+        "Electronic Dance Music",
+        "Electronic, Rap",
+        "Folk rock, Pop",
+        "Indonesian pop",
+        "Jazz",
+        "Jazz, Indonesian Indie",
+        "Pop",
+        "Pop rock, dance pop",
+        "R&B/Soul"
+      ]
+    },
+    "Release": {
+      "type": "string"
+    },
+    "Artist": {
+      "type": "string"
+    },
+    "About": {
+      "type": "text"
+    },
+    "inboxes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inbox.inbox",
+      "mappedBy": "song"
+    },
+    "other_informations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::other-information.other-information",
+      "mappedBy": "songs"
+    }
+  }
+}

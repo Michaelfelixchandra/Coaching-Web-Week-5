@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inboxes",
+  "info": {
+    "singularName": "inbox",
+    "pluralName": "inboxes",
+    "displayName": "Inbox",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Inbox": {
+      "type": "enumeration",
+      "enum": [
+        "Annoucement",
+        "Comment"
+      ]
+    },
+    "User": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "song": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::song.song",
+      "inversedBy": "inboxes"
+    }
+  }
+}
